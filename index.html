@@ -94,6 +94,7 @@
     </div>
 
     <script>
+        // Register Service Worker with error handling for blob URLs in specific environments
         if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || window.location.hostname === 'localhost')) {
             window.addEventListener('load', () => {
                 const sw = `self.addEventListener('fetch', e => e.respondWith(fetch(e.request)));`;
